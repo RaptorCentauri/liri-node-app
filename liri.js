@@ -37,15 +37,13 @@ function spotifyThis() {
     secret: keys.spotifyKeys.secret,
   });
 
-	spotify.search({type: 'track', query: argument, limit: 1}, function(err, data) {
-    if (err) {
-      return console.log('Error occurred: ' + err);
-    }
-
-    console.log(`Argument: ${argument}`);
-    console.log(data);
-
-  });
+	spotify.search({type:`track`, query:`${argument}`})
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(err) {
+      console.log(`Error: ${err}`);
+    });
 }
 
 function movieThis(){
