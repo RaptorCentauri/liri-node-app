@@ -6,7 +6,8 @@
 const request = require('request');
 // const omdbKeys = require('omdbKeys');
 const Spotify = require('node-spotify-api');
-const spotifyKeys = require('./spotifyKeys');
+const keys = require('./keys.js');
+
 
 
 
@@ -30,11 +31,18 @@ function myTweets() {
 
 function spotifyThis() {
 	console.log('spotify');
-	spotify.search({ type: 'track', query: argument }, function(err, data) {
+
+  let spotify = new Spotify({
+    id: keys.spotifyKeys.id,
+    secret: keys.spotifyKeys.secret,
+  });
+
+	spotify.search({type: 'track', query: argument, limit: 1}, function(err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
 
+    console.log(`Argument: ${argument}`);
     console.log(data);
 
   });
@@ -42,7 +50,7 @@ function spotifyThis() {
 
 function movieThis(){
 
- let apiKey = `40e9cece`;
+ let apiKey = keys.omdbKeys.key;
 
   var queryURL = `http://www.omdbapi.com/?t="${argument}"&apikey=${apiKey}`;
 
