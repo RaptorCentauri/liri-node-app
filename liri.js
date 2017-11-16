@@ -39,7 +39,27 @@ function spotifyThis() {
 
 	spotify.search({type:`track`, query:`${argument}`})
     .then(function(response) {
-      console.log(response);
+
+			for(i=0; i<response.tracks.items.length; i++){
+	      let spotifyInfo = {
+	        //Track
+	        Track: response.tracks.items[i].name,
+	        //Artist
+	        Artist: response.tracks.items[i].artists[0].name,
+	        //Album
+	        Album: response.tracks.items[i].album.name,
+	        //Previw Link
+	        Link: response.tracks.items[i].preview_url,
+	      }
+
+				console.log(`==============================================================================================================================`);
+			   for (key in spotifyInfo){
+					 console.log(`${key}: ${spotifyInfo[key]}`);
+				 };
+ 				console.log(`==============================================================================================================================`);
+				console.log(``);
+			}
+
     })
     .catch(function(err) {
       console.log(`Error: ${err}`);
