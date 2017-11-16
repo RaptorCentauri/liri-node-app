@@ -17,6 +17,14 @@ const keys = require('./keys.js');
 // do-what-it-says
 
 
+<<<<<<< HEAD
+=======
+		case 'help': helpMe();
+
+		default: helpMe();
+	}
+}
+>>>>>>> 7e84de6... added help command
 
 //Variables
 let command = process.argv[2];
@@ -129,3 +137,20 @@ switch (command) {
 	default:
 
 }
+<<<<<<< HEAD
+=======
+
+function helpMe(){
+	console.log(`Commands: "my-tweets", "spotify-this-song", "movie-this", "do-what-it-says"`);
+
+
+}
+//============================================================
+
+if(process.argv[4] != null){
+	console.log(`Multi-word searches must be in quotations!`);
+}
+else{
+	commandToRun(command);
+}
+>>>>>>> 7e84de6... added help command
