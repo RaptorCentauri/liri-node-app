@@ -9,6 +9,14 @@ const Spotify = require('node-spotify-api');
 const keys = require('./keys.js');
 
 
+<<<<<<< HEAD
+=======
+//The functions
+function commandToRun(cmd){
+	switch (cmd) {
+		case 'my-tweets': myTweets();
+		break;
+>>>>>>> cbad1f8... fixed a typo in liri.js
 
 
 // my-tweets
