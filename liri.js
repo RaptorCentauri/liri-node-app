@@ -10,8 +10,12 @@ const keys = require('./keys.js');
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //The functions
+=======
+//The Functions
+>>>>>>> 0f531b1... typo
 function commandToRun(cmd){
 	switch (cmd) {
 		case 'my-tweets': myTweets();
