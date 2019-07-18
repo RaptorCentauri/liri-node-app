@@ -1,5 +1,7 @@
-
+//WOO LINE ONE!!!
 //CHANGES!!!!!
+
+//I MADE A NEW COMMENT FOR TESTING
 
 
 //Requirements
@@ -96,6 +98,13 @@ function movieThis(){
 
     if (!error && response.statusCode === 200){
 
+<<<<<<< HEAD
+=======
+    for (const [key,value] of body) {
+        console.log(value)
+    }
+
+>>>>>>> a650be2... for testing
       let movieInfo = {
         //Title
         Title: JSON.parse(body).Title,
